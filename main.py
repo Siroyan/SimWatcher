@@ -26,4 +26,4 @@ while True:
         'title': "title"
     }
     requests.post(url="https://slack.com/api/files.upload",params=param, files=files)
-    time.sleep(15 * 60)
+    time.sleep(30 * 60)

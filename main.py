@@ -4,10 +4,7 @@ import configparser
 import datetime
 import requests
 import time
-import psutil
 from PIL import ImageGrab
-
-CPU_PERCENT_TRESHOLD = 70
 
 config_ini = configparser.ConfigParser()
 config_ini.read('config.ini', encoding='utf-8')
@@ -30,8 +27,5 @@ while True:
     }
     requests.post(url="https://slack.com/api/files.upload",params=param, files=files)
 
-    if psutil.cpu_percent(interval=1) < CPU_PERCENT_TRESHOLD:
-        print("Stop program")
-        break
-
+    print(comment)
     time.sleep(30 * 60)
